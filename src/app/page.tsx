@@ -23,10 +23,45 @@ import next from "/public/image/next.png";
 import mysql from "/public/image/mysql.png";
 import node from "/public/image/node.png";
 import react from "/public/image/react.png";
+import project from "/public/image/project.jpg";
+
+interface IProject {
+  name: string;
+  teks: string;
+  imgUrl: string;
+}
 
 interface ITools {
   img: string;
 }
+
+const dataProject = [
+  {
+    name: "Name Project",
+    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
+    imgUrl: project,
+  },
+  {
+    name: "Name Project",
+    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
+    imgUrl: project,
+  },
+  {
+    name: "Name Project",
+    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
+    imgUrl: project,
+  },
+  {
+    name: "Name Project",
+    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
+    imgUrl: project,
+  },
+  {
+    name: "Name Project",
+    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
+    imgUrl: project,
+  },
+];
 
 const dataTools: React.FC<ITools> = [
   {
@@ -53,6 +88,22 @@ const dataTools: React.FC<ITools> = [
 ];
 
 export default function Home() {
+  const newDataProject = dataProject.map((value, index) => {
+    return (
+      <CarouselItem className="basis-1/3">
+        <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg border-2 border-[#b1d690]">
+          <CardHeader>
+            <Image src={value.imgUrl} alt="" />
+          </CardHeader>
+          <CardContent className="pb-12">
+            <h2 className="text-lg text-[#b1d690]">{value.name}</h2>
+            <p className="text-sm">{value.teks}</p>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    );
+  });
+
   const newDataTool = dataTools.map((value, index) => {
     return (
       <Card className="bg-transparent border-none shadow-none">
@@ -151,127 +202,7 @@ export default function Home() {
         <hr className="bg-[#B1D690] h-2 w-[10%] rounded-lg mt-3" />
         <div>
           <Carousel className="grid py-14 gap-6">
-            <CarouselContent>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg border-2 border-[#b1d690]">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg">
-                  <CardHeader>
-                    <img
-                      src="https://i.pinimg.com/564x/d9/85/5f/d9855f2948d7cf5a0b9ae253c52647e6.jpg"
-                      alt=""
-                    />
-                  </CardHeader>
-                  <CardContent className="pb-12">
-                    <h2 className="text-lg text-[#b1d690]">Name Project</h2>
-                    <p className="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Alias, numquam.
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            </CarouselContent>
+            <CarouselContent>{newDataProject}</CarouselContent>
             <CarouselPrevious className="text-black" />
             <CarouselNext className="text-black" />
           </Carousel>
