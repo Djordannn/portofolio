@@ -25,15 +25,15 @@ import node from "/public/image/node.png";
 import react from "/public/image/react.png";
 import project from "/public/image/project.jpg";
 
-interface IProject {
-  name: string;
-  teks: string;
-  imgUrl: string;
-}
+// interface IProject {
+//   name: string;
+//   teks: string;
+//   imgUrl: string;
+// }
 
-interface ITools {
-  img: string;
-}
+// interface ITools {
+//   img: string;
+// }
 
 const dataProject = [
   {
@@ -63,7 +63,7 @@ const dataProject = [
   },
 ];
 
-const dataTools: React.FC<ITools> = [
+const dataTools = [
   {
     img: html,
   },
@@ -90,7 +90,7 @@ const dataTools: React.FC<ITools> = [
 export default function Home() {
   const newDataProject = dataProject.map((value, index) => {
     return (
-      <CarouselItem className="basis-1/3">
+      <CarouselItem key={index} className="basis-1/3">
         <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg border-2 border-[#b1d690]">
           <CardHeader>
             <Image src={value.imgUrl} alt="" />
@@ -106,7 +106,7 @@ export default function Home() {
 
   const newDataTool = dataTools.map((value, index) => {
     return (
-      <Card className="bg-transparent border-none shadow-none">
+      <Card key={index} className="bg-transparent border-none shadow-none">
         <CardContent>
           <CardContent>
             <Image src={value.img} alt="img" className="w-[100px]" />
@@ -166,7 +166,7 @@ export default function Home() {
       >
         <div className="text-center flex flex-col gap-2">
           <h1 className="text-4xl tracking-wide">
-            Hello I'am <span className="text-[#B1D690]">Djordan</span>
+            Hello I&apos;am <span className="text-[#B1D690]">Djordan</span>
           </h1>
           <h2 className="text-2xl tracking-wider">Web Developer</h2>
           <p className="w-[70%] mx-auto text-sm">
