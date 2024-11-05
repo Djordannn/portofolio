@@ -266,16 +266,13 @@ export default function Home() {
           <div>
             <ul className="flex gap-4">
               <li>
-                <a href="#">Home</a>
+                <a href="#jumbotron">Home</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#myProject">Project</a>
               </li>
               <li>
-                <a href="#">Project</a>
-              </li>
-              <li>
-                <a href="#">Tools</a>
+                <a href="#tools">Tools</a>
               </li>
             </ul>
           </div>
