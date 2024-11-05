@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "../../node_modules/next/link";
 import Image from "../../node_modules/next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -12,10 +11,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 import js from "/public/image/js.png";
 import html from "/public/image/html.png";
@@ -25,16 +33,6 @@ import mysql from "/public/image/mysql.png";
 import node from "/public/image/node.png";
 import react from "/public/image/react.png";
 import project from "/public/image/project.jpg";
-
-interface IProject {
-  name: string;
-  teks: string;
-  imgUrl: string;
-}
-
-// interface ITools {
-//   img: string;
-// }
 
 const dataProject = [
   {
@@ -124,12 +122,53 @@ export default function Home() {
         className="flex items-center fixed w-[100%] z-50 justify-between py-6 bg-[#3c3c3c] px-[9%]"
       >
         <div className="text-2xl">Logo</div>
-        <div>
-          <a href="https://github.com/Djordannn">
-            <h2 className="bg-[#b1d690] p-3 rounded-lg text-black text-lg">
-              <FaGithub />
-            </h2>
-          </a>
+        <div className="flex gap-8 items-center">
+          <div className="hidden md:block">
+            <ul className="flex items-center gap-8">
+              <li>
+                <a href="#jumbotron" className="text-[#b1d690]">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#myProject" className="hover:text-[#b1d690]">
+                  Project
+                </a>
+              </li>
+              <li>
+                <a href="#tools" className="hover:text-[#b1d690]">
+                  Tools
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Djordannn">
+                  <h2 className="bg-[#b1d690] p-3 rounded-lg text-black text-lg">
+                    <FaGithub />
+                  </h2>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="block md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-2xl hover:text-[#b1d690]">
+                <FaBars />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="h-28 mt-8">
+                <DropdownMenuSeparator>
+                  <DropdownMenuItem>
+                    <a href="#home">Home</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <a href="#myProject">Project</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <a href="#tools">Tools</a>
+                  </DropdownMenuItem>
+                </DropdownMenuSeparator>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
       <div
@@ -138,7 +177,7 @@ export default function Home() {
       >
         <div className="text-center flex flex-col gap-2">
           <h1 className="text-3xl md:text-4xl tracking-wide">
-            Hello I'am <span className="text-[#B1D690]">Djordan</span>
+            Hello I&apos;am <span className="text-[#B1D690]">Djordan</span>
           </h1>
           <h2 className="text-xl md:text-2xl tracking-wider">Web Developer</h2>
           <p className="w-[70%] mx-auto text-sm">
@@ -182,7 +221,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="tools" className="px-[9%] mt-[18rem]">
+      <div id="tools" className="px-[9%] mt-[15rem] md:mt-[18rem] pt-[7rem]">
         <h1 className="text-2xl">My Tools</h1>
         <hr className="bg-[#B1D690] h-2 w-[20%] md:w-[10%] rounded-lg mt-3" />
         <div className="py-14 grid grid-cols-2 md:grid-cols-4 gap-4">
