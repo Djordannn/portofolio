@@ -149,7 +149,14 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="block md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <div>
+              <a href="https://github.com/Djordannn">
+                <h2 className="bg-[#b1d690] p-3 rounded-lg text-black text-lg">
+                  <FaGithub />
+                </h2>
+              </a>
+            </div>
             <DropdownMenu>
               <DropdownMenuTrigger className="text-2xl hover:text-[#b1d690]">
                 <FaBars />
@@ -157,7 +164,7 @@ export default function Home() {
               <DropdownMenuContent className="h-28 mt-8">
                 <DropdownMenuSeparator>
                   <DropdownMenuItem>
-                    <a href="#home">Home</a>
+                    <a href="#jumbotron">Home</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <a href="#myProject">Project</a>
