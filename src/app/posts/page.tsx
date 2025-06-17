@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { callAPI } from "../config/axios";
+import Link from "next/link";
 
 interface IUsers {
   name: string;
@@ -23,19 +24,7 @@ const Posts = () => {
     }
   };
 
-  const newUser = {
-    username: "Maria",
-    job: "Teacher",
-  };
-
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/9", {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-
     fetchData();
   }, []);
 
@@ -44,9 +33,11 @@ const Posts = () => {
       {data.map((val, index) => (
         <div key={index}>
           <ul className="flex flex-col gap-4">
-            <li>{val.name}</li>
-            <li>{val.username}</li>
-            <li>{val.email}</li>
+            <Link href={`/posts/${val.name}`}>
+              <li>{val.name}</li>
+              <li>{val.username}</li>
+              <li>{val.email}</li>
+            </Link>
           </ul>
         </div>
       ))}

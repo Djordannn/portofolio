@@ -32,33 +32,28 @@ import next from "/public/image/next.png";
 import mysql from "/public/image/mysql.png";
 import node from "/public/image/node.png";
 import react from "/public/image/react.png";
-import project from "/public/image/project.jpg";
+import narative from "/public/image/desktop.png";
+import smpl01 from "/public/image/desktop_smpl01.png";
+import dekstop2 from "/public/image/desktop2.png";
+import oliv from "/public/image/FHD.png";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const dataProject = [
   {
-    name: "Name Project",
-    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
-    imgUrl: project,
+    name: "Narrative Apparel",
+    imgUrl: narative,
   },
   {
-    name: "Name Project",
-    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
-    imgUrl: project,
+    name: "Web with CMS",
+    imgUrl: oliv,
   },
   {
-    name: "Name Project",
-    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
-    imgUrl: project,
+    name: "Template HTML & CSS",
+    imgUrl: smpl01,
   },
   {
-    name: "Name Project",
-    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
-    imgUrl: project,
-  },
-  {
-    name: "Name Project",
-    teks: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, numquam",
-    imgUrl: project,
+    name: "Template Tailwind CSS",
+    imgUrl: dekstop2,
   },
 ];
 
@@ -92,11 +87,24 @@ export default function Home() {
       <CarouselItem key={index} className="md:basis-1/3">
         <Card className="w-[100%] bg-[#3c3c3c] text-[#eeee] border-none shadow-lg border-2 border-[#b1d690]">
           <CardHeader>
-            <Image src={value.imgUrl} alt="" />
+            <Dialog>
+              <DialogTrigger>
+                <Image
+                  src={value.imgUrl}
+                  alt="img"
+                  className="w-full h-[280px] object-cover object-top"
+                />
+              </DialogTrigger>
+              <DialogContent>
+                <div className="w-full h-[500px] overflow-y-auto">
+                  <Image src={value.imgUrl} alt="img" />
+                </div>
+              </DialogContent>
+            </Dialog>
           </CardHeader>
-          <CardContent className="pb-12">
+          <CardContent>
             <h2 className="text-lg text-[#b1d690]">{value.name}</h2>
-            <p className="text-sm">{value.teks}</p>
+            {/* <p className="text-sm">{value.teks}</p> */}
           </CardContent>
         </Card>
       </CarouselItem>
@@ -187,11 +195,11 @@ export default function Home() {
             Hello I&apos;am <span className="text-[#B1D690]">Djordan</span>
           </h1>
           <h2 className="text-xl md:text-2xl tracking-wider">Web Developer</h2>
-          <p className="w-[70%] mx-auto text-sm">
+          {/* <p className="w-[70%] mx-auto text-sm">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
             accusamus commodi ipsa. Facilis, dicta mollitia!
-          </p>
-          <Button className="block w-[20%] md:w-[15%] mx-auto mt-3 bg-[#B1D690] text-[#2d2d2d] hover:bg-[#b1d690]">
+          </p> */}
+          <Button className="block w-[30%] mx-auto mt-3 bg-[#B1D690] text-[#2d2d2d] hover:bg-[#b1d690]">
             <a href="#myProject">More</a>
           </Button>
         </div>
@@ -208,10 +216,10 @@ export default function Home() {
         </div>
         <div className="md:w-[70%]">
           <p className="text-justify text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex
-            perspiciatis expedita modi suscipit maxime quod, est id, mollitia
-            quos libero ducimus nesciunt nisi temporibus quasi ad alias commodi
-            voluptatibus.
+            Hello, I&apos;am Djordan, a junior web developer with a passion for
+            building dynamic and responsive web applications. I&apos;am eager to
+            learn and grow in the field of web development, and i&apos;am
+            excited to work with a team to create innovative solutions
           </p>
         </div>
       </div>
@@ -240,10 +248,10 @@ export default function Home() {
           <h1 className="text-4xl">
             Get in <span className="text-[#b1d690]">Touch</span>
           </h1>
-          <p className="w-[90%] mx-auto text-center text-sm">
+          {/* <p className="w-[90%] mx-auto text-center text-sm">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda,
             dolorum!
-          </p>
+          </p> */}
           <div>
             <ul className="flex gap-4">
               <li>
